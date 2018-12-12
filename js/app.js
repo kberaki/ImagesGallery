@@ -5,6 +5,7 @@ const allPhotos = []
 const apiURL = 'https://raw.githubusercontent.com/kberaki/lab-02-repository/lab-2/page-1.json'
 
 
+
 const Photo = function(title, filePath, description, keyword) {
   this.title = title
   this.path = filePath
@@ -26,7 +27,7 @@ $($selector).on('change', () => {
   $('div').hide()
   $(`.${event.target.value}`).show()
 })
-
+let GetJsonFunc = function(){ 
 $.getJSON(apiURL)
   .then(response => {
     response.forEach(photo => {
@@ -40,7 +41,9 @@ $.getJSON(apiURL)
     //   console.log('nope')
     // }
   })
+}
 
+GetJsonFunc()
 
 
 
